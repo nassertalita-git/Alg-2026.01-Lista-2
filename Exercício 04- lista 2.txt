@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, num1, num2, resto, mdc, mmc;
+
+    printf("Digite dois números inteiros: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Guardamos os valores originais para o cálculo final
+    a = num1;
+    b = num2;
+
+    // Algoritmo de Euclides para achar o MDC
+    while (num2 != 0) {
+        resto = num1 % num2;
+        num1 = num2;
+        num2 = resto;
+    }
+    mdc = num1;
+
+    // Fórmula do MMC
+    mmc = (a * b) / mdc;
+
+    printf("O MMC de %d e %d é: %d\n", a, b, mmc);
+
+    return 0;
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <ctype.h> // Necessário para a função tolower
+
+int main() {
+    char letra;
+
+    printf("Digite uma letra: ");
+    scanf(" %c", &letra); // O espaço antes de %c ignora o 'enter' de comandos anteriores
+
+    // Converte para minúscula para simplificar a verificação
+    letra = tolower(letra);
+
+    // Verifica se é uma letra válida antes de classificar
+    if (isalpha(letra)) {
+        switch (letra) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                printf("A letra '%c' e uma vogal.\n", letra);
+                break;
+            default:
+                printf("A letra '%c' e uma consoante.\n", letra);
+        }
+    } else {
+        printf("Isso nao e uma letra valida!\n");
+    }
+
+    return 0;
+}

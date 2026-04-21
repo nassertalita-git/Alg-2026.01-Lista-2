@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float tamanhoMB, velocidadeMbps, tempoSegundos, tempoMinutos;
+
+    printf("Tamanho do arquivo (MB): ");
+    scanf("%f", &tamanhoMB);
+
+    printf("Velocidade da Internet (Mbps): ");
+    scanf("%f", &velocidadeMbps);
+
+    // 1. Convertemos o tamanho do arquivo de MB para Megabits (vezes 8)
+    // 2. Dividimos pela velocidade para achar o tempo em segundos
+    tempoSegundos = (tamanhoMB * 8) / velocidadeMbps;
+
+    // 3. Convertemos segundos para minutos
+    tempoMinutos = tempoSegundos / 60;
+
+    printf("\nO tempo aproximado de download e de: %.2f minutos\n", tempoMinutos);
+
+    return 0;
+}

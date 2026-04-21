@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int soma = 0;
+    int i;
+
+    // Percorremos de 0 a 6 para encontrar todas as combinações com o número 4
+    for (i = 0; i <= 6; i++) {
+        // Se for a peça dupla (4-4), somamos o 4 duas vezes
+        if (i == 4) {
+            soma += 8; // 4 + 4
+        } else {
+            soma += 4; // Nas outras peças, o 4 aparece apenas uma vez
+        }
+    }
+
+    printf("A soma de todos os numeros 4 do domino e: %d\n", soma);
+
+    return 0;
+}

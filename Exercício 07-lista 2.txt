@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int sorteado, palpite, tentativas = 0;
+
+    // Semente para gerar números aleatórios diferentes a cada execução
+    srand(time(NULL));
+
+    // Sorteia um número de 0 a 100
+    sorteado = rand() % 101;
+
+    printf("Bem-vindo ao jogo! Tente adivinhar o numero entre 0 e 100.\n");
+
+    do {
+        printf("Digite seu palpite: ");
+        scanf("%d", &palpite);
+        tentativas++;
+
+        if (palpite < sorteado) {
+            printf("O numero sorteado e MAIOR que %d.\n", palpite);
+        } else if (palpite > sorteado) {
+            printf("O numero sorteado e MENOR que %d.\n", palpite);
+        } else {
+            printf("\nParabens! Voce acertou o numero %d!\n", sorteado);
+            printf("Total de tentativas: %d\n", tentativas);
+        }
+
+    } while (palpite != sorteado);
+
+    return 0;
+}
